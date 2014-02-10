@@ -1,0 +1,130 @@
+#container
+{
+    width: 100%;
+    margin: 10px auto;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid gray;
+    line-height: 130%;
+    overflow: hidden;
+}
+
+#top
+{
+    padding: .5em;
+    background-color: #ddd;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    overflow: hidden;
+}
+
+#top h1
+{
+    padding: 0;
+    margin: 0;
+}
+
+#top #page-pic
+{
+    float: left;
+    margin: 0;
+}
+
+#top #page-txt
+{
+    margin-left: 260px;
+    margin-right: 200px;
+}
+
+#top #top-right
+{
+    float: right;
+}
+
+#top #logout-button
+{
+    margin-bottom: 20;
+}
+
+#top #excel-report
+{
+    background-color: #FFFFFF;
+    width:180px;
+}
+
+#excel-report p
+{
+    display: table;
+    margin: 0 auto;
+}
+
+#excel-report #report1
+{
+    display: table;
+    margin: 0 auto;
+    background-color: #FFFF99;
+    border: 1px;
+}
+
+#excel-report #report2
+{
+    display: table;
+    margin: 0 auto;
+    background-color: #FFFF99;
+    border: 1px;
+}
+
+#leftnav
+{
+    float: left;
+    width: 280px;
+    margin: 0;
+    /*padding: 1em;*/
+    /*height: 100% ;*/
+}
+
+#rightnav
+{
+    float: right;
+    width: 220px;
+    margin: 0 auto 1em auto;
+    padding: 1em;
+}
+
+#rightnav #time-choose
+{
+    display: table;
+    margin: 0 auto;
+}
+
+#content
+{
+    margin-left: 280px;
+    /*border-left: 1px solid gray;*/
+    margin-right: 250px;
+    /*border-right: 1px solid gray;*/
+    padding: 0;
+    /*max-width: 36em;*/
+    /*height: 100%;*/ /*firefox and chrome won't show the button if this is set*/
+    background-color: #CCFF99;
+}
+
+#content table
+{
+    display: table;
+    margin: 0 auto;
+}
+
+#footer
+{
+    clear: both;
+    margin: 0;
+    padding: .5em;
+    color: #333;
+    background-color: #ddd;
+    border-top: 1px solid gray;
+}
+
+#leftnav p, #rightnav p { margin: 0 0 1em 0; }
+#content p {margin: 0; }
+#content h2 { margin: 0 0 .5em 0; }
