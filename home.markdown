@@ -1,11 +1,10 @@
 ---
 title: Home
 date: 2017-05-07 23:24:00 Z
-published: false
 ---
 
 <?php
-define("INDEX_FILE_ABSOLUTE_PATH", dirname(__FILE__));
+define("INDEX_FILE_ABSOLUTE_PATH", dirname(**FILE**));
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/variable.php");
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/facebook-php-sdk/src/facebook.php");
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/get-facebook-graph/getpage.php");
@@ -13,30 +12,30 @@ require_once (INDEX_FILE_ABSOLUTE_PATH . "/ExcelWriter.php");
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/Excel-Classes/PHPExcel.php");
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/Excel-Classes/PHPExcel/Writer/Excel2007.php");
 require_once (INDEX_FILE_ABSOLUTE_PATH . "/Excel-Classes/PHPExcel/Writer/Excel5.php");
-$facebook = new Facebook(array(
-    'appId' => '150815285092613',
-    'secret' => 'cfe12caf76b6d0e7d4ff65f63e7758c4',
-));
+\$facebook = new Facebook(array(
+\'appId' => '150815285092613',
+\'secret' => 'cfe12caf76b6d0e7d4ff65f63e7758c4',
+\));
 // Get User ID
-$user = $facebook->getUser();
+\$user = $facebook->getUser();
 if ($user) {
-    try {
-        // Proceed knowing you have a logged in user who's authenticated.
-        $user_profile = $facebook->api('/me');
-    } catch (FacebookApiException $e) {
-        error_log($e);
-        $user = null;
-    }
+try {
+// Proceed knowing you have a logged in user who's authenticated.
+\$user_profile = $facebook->api('/me');
+} catch (FacebookApiException $e) {
+error_log($e);
+\$user = null;
+}
 }
 if ($user) {
-    $params = array( 'next' => 'http://fb.odo.com.tw/FbFansAnalysis/logout.php' );
-    $logoutUrl = $facebook->getLogoutUrl($params);
+\$params = array( 'next' => 'http://fb.odo.com.tw/FbFansAnalysis/logout.php' );
+\$logoutUrl = $facebook->getLogoutUrl($params);
 } else {
-    //header('Location:login.php');
-    $url = "login.php";
-    echo "<script type='text/javascript'>";
-    echo "window.location.href='$url'";
-    echo "</script>";
+//header('Location:login.php');
+\$url = "login.php";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url'";
+echo "</script>";
 }
 ?>
 
@@ -48,11 +47,11 @@ if ($user) {
     <meta http-equiv="expires" content="0"/>-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>FbFansAnalysis</title>
-
+    
     <!-- this index.php's css-->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!---->
-
+    
     <link rel="stylesheet" type="text/css" href="Timer-jQuery/anytime.css"/>
     <link rel="stylesheet" type="text/css"
           href="jquery-ui-1.10.0.custom/development-bundle/themes/ui-lightness/jquery-ui.css">
@@ -63,7 +62,7 @@ if ($user) {
     <script src="Timer-jQuery/anytime.js"></script>
     <script src="Timer-jQuery/anytimetz.js"></script>
     <script src="Timer-jQuery/timer.js"></script>
-
+    
     <style type="text/css">
         #rangeTimeFrom, #rangeTimeTo {
             background-image: url("pic/calendar.png");
@@ -72,17 +71,17 @@ if ($user) {
         }
     </style>
     <!--clock ui-->
-
+    
     <!--jQuery menu ui-->
     <style>
         .ui-menu {
             width: 260px;
         }
     </style>
-
+    
     <script src="jquery-ui-1.10.0.custom/js/jquery-ui-1.10.0.custom.js"></script>
     <!--jQuery menu ui-->
-
+    
     <!--
     <script>
         window.fbAsyncInit = function () {
@@ -120,13 +119,15 @@ if ($user) {
             });
         }
     </script>
+
 -->
 </head>
 
         <!--<body <?php if (isset($_GET["pageId"])): ?> onload='initTime("#rangeTimeTo")';<?php endif?>>-->
+
 <body>
 <div id="container">
-    <div id="fb-root"></div>
+<div id="fb-root"></div>
 
     <div id="top">
         <div id="page-info">
@@ -165,14 +166,14 @@ if ($user) {
                 <span id="report1">
                     <a href="excel-report/fansAnalysis.xlsx">Excel 2007 report</a>
                 </span>
-
+    
                 <span id="report2">
                     <a href="excel-report/fansAnalysis.xls">Excel 2003 report</a>
                 </span>
         </div>
         </div>
     </div> <!--top-->
-
+    
     <div id="leftnav">
         <!--avoid the server to call getUserPage when user doesn't login
      , because even we redirect to the login.php by javascript, the following
@@ -192,7 +193,7 @@ if ($user) {
             }
         }
         ?>
-
+    
         <!--avoid the server to print this script when user doesn't login
         , because even we redirect to the login.php by javascript, the following
         code is still executed.-->
@@ -202,8 +203,8 @@ if ($user) {
         </script>
         <?php } ?>
     </div><!--<div id="leftnav">-->
-
-
+    
+    
     <div id="rightnav">
         <div id="time-choose">
             <?php
@@ -306,19 +307,22 @@ if ($user) {
             echo "<p>please select the time and run for the result.</p>";
         }
         ?>
-
+    
     </div><!--<div id="content">-->
     <div id="footer"></div><!--<div id="footer">-->
+
 </div>
 </body>
 </html>
 
 <?php
 function rankCompare($a, $b){
-    if($a['score'] == $b['score'])
-        return 0;
-    else{
-        return ($a['score'] > $b['score']) ? -1 : 1;
-    }
+if($a\['score'\] == $b\['score'\])
+return 0;
+else{
+return ($a\['score'\] > $b\['score'\]) ? -1 : 1;
+}
 }
 ?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html> <head> <metahttp-equiv="content-type"content="text/html; charset=windows-1250"> <metaname="generator"content="PSPad editor, www.pspad.com"> <title></title> <scriptsrc="//connect.facebook.net/zh_TW/all.js"></script> </head> <body> </body></html>
