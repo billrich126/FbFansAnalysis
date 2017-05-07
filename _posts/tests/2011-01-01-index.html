@@ -1,0 +1,17 @@
+---
+title: Tests
+date: 2011-01-01 00:00:00 Z
+categories:
+- masonry
+- tests
+layout: default
+is_index: true
+---
+
+<ul>
+  {% for test in site.categories.tests reversed %}
+    {% unless test.is_index %}
+      <li><a href="{{ test.url }}">{{ test.title }}</a>
+    {% endunless %}
+  {% endfor %}
+</ul>
